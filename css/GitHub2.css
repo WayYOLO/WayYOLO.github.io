@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, arial, sans-serif;
+  font-family:'Microsoft YaHei', Helvetica, arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
@@ -63,7 +63,7 @@ h6 tt, h6 code {
 
 h1 {
   font-size: 22px;
-  color: black; }
+  color: #555555; }
 
 h2 {
   font-size: 16px;
