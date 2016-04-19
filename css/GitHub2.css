@@ -1,5 +1,15 @@
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('fonts/HelveticaNeue.eot');
+    src: url('fonts/HelveticaNeue.eot') format('embedded-opentype'),
+         url('fonts/HelveticaNeue.woff2') format('woff2'),
+         url('fonts/HelveticaNeue.woff') format('woff'),
+         url('fonts/HelveticaNeue.ttf') format('truetype'),
+         url('fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');}
 body {
-  font-family:'Microsoft YaHei', Helvetica, arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family:'Helvetica Neue','Microsoft YaHei', Helvetica, arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
