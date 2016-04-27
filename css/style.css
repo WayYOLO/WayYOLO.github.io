@@ -27,8 +27,8 @@ h2{
 .loading{
   border: none;
   box-shadow:none;
-  width: 32px;
-  height: 32px;
+/*  width: 32px;
+  height: 32px;*/
   margin: 70px auto;
 }
 .prev{

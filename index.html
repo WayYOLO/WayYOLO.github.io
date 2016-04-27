@@ -8,22 +8,23 @@
     <link rel='stylesheet' href='css/style.css' type='text/css'/>
    <!--  <link rel='stylesheet' href='css/blur.css' type='text/css'/> -->
     <link rel="stylesheet" href="css/highlight.css">
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/director.min.js"></script>   
-    <script src="js/ractive.min.js"></script>    
-    <script src="js/marked.min.js"></script>
-    <script src="config.js"></script>
-    <script src="js/highlight.min.js"></script> 
-    <script src="http://static.duoshuo.com/embed.js"></script>
+<!--     // <script src="js/jquery-2.0.3.min.js"></script>
+    // <script src="js/director.min.js"></script>   
+    // <script src="js/ractive.min.js"></script>    
+    // <script src="js/marked.min.js"></script>
+    // <script src="config.js"></script>
+    // <script src="js/highlight.min.js"></script> 
+    // <script src="http://static.duoshuo.com/embed.js"></script> -->
     <!--
     <script src="http://apps.bdimg.com/libs/highlight.js/8.6/highlight.min.js"></script>
     -->
+
 </head>
 <body>
 <div id="header"><h1><a href="#/" class="blog_title">wayyolo的博客</a></h1>
 </div>
 <div id="container">
-    <center><img src="loading.gif" alt="loading" class="loading"></center>
+    <center><img src="imgs/loading.gif" alt="loading" class="loading"></center>
 </div>
 <script type="text/ractive" id="listTpl">
     <ul class="postlist">
@@ -41,6 +42,6 @@
      <div class="content">{{{markdown2HTML(body)}}}</div>
     {{/post}}
 </script>
-<script src="app.js"></script>
+<script data-main="main" src="js/require.min.js"></script>
 </body>
 </html>
