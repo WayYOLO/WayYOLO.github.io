@@ -1,0 +1,45 @@
+@charset "UTF-8";
+// ===========================================================================
+//  定义一些HTML元素公认的标准样式
+//  一般为项目公共确认;
+// ===========================================================================
+//盒子模型
+html {
+	box-sizing: $box-sizing-value;
+}
+*{
+	& :before,
+	& :after {
+		box-sizing: inherit;
+	}
+}
+// 1. 禁止按钮中的文字被选中
+// 2. 清除按钮和输入框获取焦点时和点击后的外圈线
+//    如此会导致在页面中使用tab键时没有明确的提示效果
+input, button, textarea, keygen, select {
+	-webkit-user-select: none;  // 1
+	-moz-user-select: none;  // 1
+	-ms-user-select: none;  // 1
+	user-select: none;  // 1
+	&:focus, &:active {
+		outline: none;  // 2
+	}
+}
+// 1. 去除列表样式符
+// 2. 清除列表左缩进
+// 3. 清除列表上下间距
+ul, ol, dd {
+	list-style-type: none;  // 1
+	padding-left: 0;  // 2
+	margin-top: 0;  // 3
+	margin-bottom: 0;  // 3
+}
+// 合并表格的边框
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+//textarea不可伸缩
+textarea{
+    resize:none;
+}
