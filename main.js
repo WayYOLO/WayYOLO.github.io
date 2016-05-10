@@ -31,7 +31,8 @@ define(['jquery',
 					per_page     : _config['per_page']
 				},
 				beforeSend:function(){
-					$('#container').html('<center><img src="imgs/loading.gif" class="loading"></center>');
+					// $('#container').html('<center><img src="imgs/loading.gif" class="loading"></center>');
+					$('#container').html('<center><i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i></center>');
 				},
 				success:function(data, textStatus, jqXHR){
 					var link = jqXHR.getResponseHeader("Link") || "";
@@ -105,7 +106,7 @@ define(['jquery',
 			// access_token:_config['access_token']
 		},
 		beforeSend:function(){
-			$('#container').html('<center><img src="imgs/loading.gif" alt="loading" class="loading"></center>');
+			$('#container').html('<center><i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i></center>');
 		},
 		success:function(data){
 			var ractive = new Ractive({

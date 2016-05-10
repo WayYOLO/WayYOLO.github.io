@@ -6,12 +6,70 @@
 //盒子模型
 html {
 	box-sizing: $box-sizing-value;
+	//表单元素在手机中点击时会出现边框，取消边框
+	-webkit-tap-highlight-color:rgba(0,0,0,0)
 }
 *{
+	&,
 	& :before,
 	& :after {
 		box-sizing: inherit;
 	}
+}
+//导入字体文件
+@font-face {
+font-family: 'My Helvetica Neue';
+	src: url('fonts/HelveticaNeue.eot');
+	src: url('fonts/HelveticaNeue.eot') format('embedded-opentype'),
+		url('fonts/HelveticaNeue.woff2') format('woff2'),
+		url('fonts/HelveticaNeue.woff') format('woff'),
+		url('fonts/HelveticaNeue.ttf') format('truetype'),
+		url('fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+}
+//body初始化设置
+@if($ratio-font-size){
+	html{
+		font-size: 62.5%;//10px = 1em = 100% = 8pt
+	}
+}@else{
+	html{
+		font-size: $rem-font-size;//默认根字体大小;
+	}
+}
+body {
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family:$normal-font;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+}
+//===========================================================================
+//项目基础设置(可持续增加)
+//===========================================================================
+ // 基本的链接样式 
+// 1. 去除<a>链接悬停时的下划线
+// 2. 去除<a>链接获取焦点时的外圈线
+// 3.去掉 IE 10+ 点击链接时的灰色背景
+a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        text-decoration: none;  // 1
+        outline: none;  // 2
+    }
+}
+a:active {
+     background-color: transparent; //3
+}
+//修复表单元素不能继承字体样式
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
 }
 // 1. 禁止按钮中的文字被选中
 // 2. 清除按钮和输入框获取焦点时和点击后的外圈线
@@ -42,4 +100,29 @@ table {
 //textarea不可伸缩
 textarea{
     resize:none;
+}
+// 常用html标签样式初始化
+//==============================================
+h1, h2, h3, h4, h5, h6{
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+h1, h2, h3{
+  margin-top: $line-height-computed;
+  margin-bottom: ($line-height-computed / 2);
+ }
+h4,h5,h6{
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+}
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; }
+p {
+  margin: 0 0 ($line-height-computed / 2);
 }

@@ -1,10 +1,63 @@
 @charset "UTF-8";
 // ===========================================================================
 //  全局变量
-//  将参数、颜色、数字的变量统一放在此处方便管理;
+//  将参数、颜色、字体、数字的变量统一放在此处方便管理;
 // ===========================================================================
 
+
+
+//===========================================================================
 //整体设置
 //===========================================================================
-$reset-import : false !default; //是否引入强制重置样式;
-$box-sizing-value: border-box;
+$reset-import :           false !default; //是否引入强制重置样式;
+$normal-reset:           ture !default; //自定义重置样式;（很多设置会与reset相似，但更自主控制）;
+$ratio-font-size:          false!default;//是否整体比例设置字体;设置html字体大小为62.5%;
+$rem-font-size:           16px!default;//为html设置字体大小，以便用rem计算大小；
+$box-sizing-value:        border-box;//整体盒子模型属性;
+$body-bg:               #fff !default;//整体背景颜色
+$text-color:            #222 !default;//默认整体颜色
+//标题的基础设置
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+
+// ===========================================================================
+//  字体设置
+// ===========================================================================
+//字体类型
+$georgia: Georgia, Cambria, "Times New Roman", Times, serif !default;
+$helvetica: "Helvetica Neue",Helvetica, Roboto, Arial, sans-serif !default;
+$lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif !default;
+$monospace: "Bitstream Vera Sans Mono", Monaco, "Courier New", Consolas, Courier, monospace !default;
+$verdana: Verdana, Geneva, sans-serif !default;
+$arial: Arial, Helvetica, sans-serif  !default;
+$normal-font:"My Helvetica Neue","Microsoft YaHei",Helvetica !default;
+
+// 默认的中英文字体（正文字体）
+$zh-font: "Microsoft YaHei", 微软雅黑, "宋体", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$en-font: $helvetica;
+$font: $zh-font;
+
+// 标题字体
+$title-font: $georgia;
+
+// 文章内容的字体
+$article-font: $verdana;
+//字体大小
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+//=========================================================================
+//行高设置
+//=========================================================================
+$line-height-base:        1.428571429 !default; // 20/14
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
