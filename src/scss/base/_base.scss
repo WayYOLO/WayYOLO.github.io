@@ -29,7 +29,7 @@ font-family: 'My Helvetica Neue';
 //body初始化设置
 @if($ratio-font-size){
 	html{
-		font-size: 62.5%;//10px = 1em = 100% = 8pt
+		font-size: 62.5%;//10px = 1em = 100% = 8pt 由于chrome设置了最小字体大小为12px，此合理性不强
 	}
 }@else{
 	html{
@@ -125,4 +125,10 @@ h5 { font-size: $font-size-h5; }
 h6 { font-size: $font-size-h6; }
 p {
   margin: 0 0 ($line-height-computed / 2);
+}
+hr{
+	margin-top:$line-height-computed;
+	margin-bottom:$line-height-computed;
+	height: .05rem;
+	background-color:currentColor;
 }

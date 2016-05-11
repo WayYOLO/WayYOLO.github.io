@@ -3485,6 +3485,13 @@ p {
   margin: 0 0 10px;
 }
 
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: .05rem;
+  background-color: currentColor;
+}
+
 button {
   padding: .3rem .8rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -3494,7 +3501,7 @@ button {
   box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.5);
   color: white;
   text-shadow: 0 -0.05rem 0.05rem rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.5;
   -webkit-transition: background-color .25s;
   transition: background-color .25s;
@@ -3532,6 +3539,50 @@ button.disabled, button.disabled:hover, button.disabled:focus, button.disabled.f
   filter: alpha(opacity=65);
   box-shadow: none;
   opacity: .65;
+}
+
+.callout {
+  display: inline-block;
+  position: relative;
+  padding: 0.5625rem 0.875rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1.5;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 1rem;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.125rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.callout.marked {
+  background-color: #6b0;
+  border: 1px solid #4a8800;
+}
+
+.callout::before {
+  content: "";
+  position: absolute;
+  top: -.4em;
+  left: 1em;
+  padding: .35em;
+  background: inherit;
+  border: inherit;
+  border-right: 0;
+  border-bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 

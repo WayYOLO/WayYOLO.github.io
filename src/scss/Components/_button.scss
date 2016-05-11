@@ -3,6 +3,7 @@
 //  按钮组件
 //  
 // ===========================================================================
+//来自CSS Secrets的DRY思想，以及bootstarp按钮的一些设置
 @mixin button-common-att(){
 	display: inline-block;
 	text-align: center;
@@ -20,7 +21,7 @@ button{
 	box-shadow:0 .05rem .25rem rgba(0,0,0,.5);
 	color:  white;
 	text-shadow: 0 -.05rem .05rem rgba(0,0,0,.5);
-	font-size:1rem;
+	font-size:1.25rem;
 	line-height:1.5;
 	transition: background-color .25s;
 	@include button-common-att(); 
@@ -70,5 +71,4 @@ button{
 			opacity: .65;
 		}
 	}
-
 }

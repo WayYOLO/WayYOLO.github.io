@@ -1,0 +1,47 @@
+@charset "UTF-8";
+// ===========================================================================
+//  提示框组件
+//  
+// ===========================================================================
+//来自CSS Secrets的DRY思想,继承的运用
+.callout{
+	display:inline-block;
+	position:relative;
+	padding: (9rem/16)  (14rem/16); //"/"有分割数据和除法的功能，默认是分隔数据,加括号以区分
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: normal;//文字距离;
+	line-height:1.5;
+	text-align: left;
+	text-align: start;//css3属性ie不支持;
+	text-decoration:none;
+	text-shadow: none;
+	text-transform: none;//大小写控制;
+	white-space: normal;//设置如何处理元素内的空白,控制换行等;
+	word-break: normal;//规定自动换行的处理方法
+	word-spacing: normal;//词距离;
+	word-wrap:normal;//css3,设置break-word可实现强制换行;
+	font-size: (16rem/16);
+	background-color: #fff;
+	background-clip: border-box;//背景的渲染范围
+	border: 1px solid #ccc;//兼容低版本ie
+	border: 1px solid rgba(0, 0, 0, 0.2);	
+	border-radius:(2rem/16);
+	box-shadow: 0 (4rem/16) (8rem/16) rgba(0, 0, 0, 0.2);
+	&.marked{
+		background-color:#6b0;
+		border:1px solid darken(#6b0, 10%);
+	}
+}
+.callout::before{
+	content: "";
+	position:absolute;
+	top: -.4em;
+	left:1em;
+	padding:.35em;
+	background:inherit;
+	border:inherit; 
+	border-right:0;
+	border-bottom:0;
+	transform: rotate(45deg);
+}
