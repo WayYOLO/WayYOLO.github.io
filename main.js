@@ -1,5 +1,5 @@
 require.config({
-	baseUrl:"js",
+	baseUrl:"lib",
 	paths: {
 	"jquery": "jquery-2.0.3.min",
 	"ractive":"ractive.min"
@@ -90,7 +90,7 @@ define(['jquery',
 		function detail(id){
 			if(!window._G){
 				window._G = {post: {}, postList: {}};
-				window._G.post[id] = {};  
+				window._G.post[id] = {};
 			}
 
 		if(_G.post[id].body != undefined){
@@ -119,7 +119,7 @@ define(['jquery',
 		toggleDuoshuoComments('#container', id);
 		highlight();
 		}
-		});  
+		});
 
 		}
 

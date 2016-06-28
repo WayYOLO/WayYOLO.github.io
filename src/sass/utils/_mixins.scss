@@ -1,0 +1,61 @@
+@charset "UTF-8";
+// ===========================================================================
+//   设置mixin
+// ===========================================================================
+
+// =============================================================
+//  创建快捷的响应式写法
+// =============================================================
+// $breakpoint-xlarge: 1560px;
+// $breakpoint-large: 1280px;
+// $breakpoint-normal: 1024px;
+// $breakpoint-medium: 860px;
+// $breakpoint-small: 640px;
+// $breakpoint-xsmall: 480px;
+@mixin screen-xlarge {
+    @media screen and (min-width: $breakpoint-xlarge) {
+        @content;
+        //@content在sass3.2.0中引入，可以用来解决css3的@media等带来的问题。它可以使@mixin接受一整块样式
+    }
+}
+
+@mixin screen-large {
+    @media screen
+        and (min-width: $breakpoint-large)
+        and (max-width: $breakpoint-xlarge) {
+        @content;
+    }
+}
+
+// 默认屏宽范围为 normal ~ large 之间，此写法可以省略
+@mixin screen-normal {
+    @media screen
+        and (min-width: $breakpoint-normal)
+        and (max-width: $breakpoint-large) {
+        @content;
+    }
+}
+
+@mixin screen-medium {
+    @media screen
+        and (min-width: $breakpoint-medium)
+        and (max-width: $breakpoint-normal) {
+        @content;
+    }
+}
+
+@mixin screen-small {
+    @media screen
+        and (min-width: $breakpoint-small)
+        and (max-width: $breakpoint-medium) {
+        @content;
+    }
+}
+
+@mixin screen-xsmall {
+	@media screen
+	and (min-width: $breakpoint-xsmall)
+	and (max-width: $breakpoint-small) {
+		@content;
+	}
+}
