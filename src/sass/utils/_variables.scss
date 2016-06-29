@@ -13,9 +13,11 @@ $reset-import :           false !default; //是否引入强制重置样式;
 $normal-reset:           ture !default; //自定义重置样式;（很多设置会与reset相似，但更自主控制）;
 $ratio-font-size:          false!default;//是否整体比例设置字体;设置html字体大小为62.5%;
 $rem-font-size:           16px!default;//为html设置字体大小，以便用rem计算大小；
+$font-size-base:          14px !default;//整体默认字体大小；
 $box-sizing-value:        border-box;//整体盒子模型属性;
-$body-bg:               #fff !default;//整体背景颜色
-$text-color:            #222 !default;//默认整体颜色
+$body-bg:               #fff !default;//整体背景颜色；
+$text-color:            #222 !default;//默认字体整体颜色；
+$border-corol:          #eee !default;//默认边框颜色；
 //标题的基础设置
 $headings-font-family:    inherit !default;
 $headings-font-weight:    500 !default;
@@ -45,8 +47,8 @@ $title-font: $georgia;
 
 // 文章内容的字体
 $article-font: $verdana;
+
 //字体大小
-$font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -56,11 +58,19 @@ $font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
 //=========================================================================
 //行高设置
 //=========================================================================
 $line-height-base:        1.428571429 !default; // 20/14
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+//===========================================================================
+//边框
+//===========================================================================
+$blockquote-border-color: #ddd;//引用的边框颜色；
+
 // ===========================================================================
 //  设备宽度的媒体查询变量断点，用于相应式布局
 // ===========================================================================

@@ -19,12 +19,12 @@ html {
 //导入字体文件
 @font-face {
 font-family: 'My Helvetica Neue';
-	src: url('fonts/HelveticaNeue.eot');
-	src: url('fonts/HelveticaNeue.eot') format('embedded-opentype'),
-		url('fonts/HelveticaNeue.woff2') format('woff2'),
-		url('fonts/HelveticaNeue.woff') format('woff'),
-		url('fonts/HelveticaNeue.ttf') format('truetype'),
-		url('fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+	src: url('../fonts/HelveticaNeue.eot');
+	src: url('../fonts/HelveticaNeue.eot') format('embedded-opentype'),
+		url('../fonts/HelveticaNeue.woff2') format('woff2'),
+		url('../fonts/HelveticaNeue.woff') format('woff'),
+		url('../fonts/HelveticaNeue.ttf') format('truetype'),
+		url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
 }
 //body初始化设置
 @if($ratio-font-size){
@@ -37,18 +37,18 @@ font-family: 'My Helvetica Neue';
 	}
 }
 body {
-   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family:$normal-font;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $text-color;
-  background-color: $body-bg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family:$normal-font;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $body-bg;
 }
 //===========================================================================
 //项目基础设置(可持续增加)
 //===========================================================================
- // 基本的链接样式 
+ // 基本的链接样式
 // 1. 去除<a>链接悬停时的下划线
 // 2. 去除<a>链接获取焦点时的外圈线
 // 3.去掉 IE 10+ 点击链接时的灰色背景
