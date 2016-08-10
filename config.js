@@ -1,5 +1,5 @@
 var _config = {
-    blog_name       : 'Way\'sbolg',         // 博客名称
+    blog_name       : 'Way\'s bolg',         // 博客名称
     owner           : 'WayYOLO',           // github 用户名
     repo            : 'WayYOLO.github.io',// github 中对应项目名
     duoshuo_id      : 'wayyolo',            // 在第三方评论插件多说申请站点的子域名
