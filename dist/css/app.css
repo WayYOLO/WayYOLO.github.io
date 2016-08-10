@@ -3988,6 +3988,11 @@ a.next {
   padding-left: 2rem;
   list-style-type: lower-roman;
 }
+.content img {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
 
 p.ds-powered-by {
   visibility: hidden;
