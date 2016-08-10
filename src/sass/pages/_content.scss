@@ -113,7 +113,7 @@ a.next{
     float: right;
     margin-right: 1rem;
 }
-@media(max-width:62rem){
+@media  screen and (max-width:62rem){
     .content-col{
         margin-left: 0;
         margin-top: 24rem;
