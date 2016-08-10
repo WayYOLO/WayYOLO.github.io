@@ -1,5 +1,5 @@
 require.config({
-	baseUrl:"js",
+	baseUrl:"lib",
 	paths: {
 	"jquery": "jquery-2.0.3.min",
 	"ractive":"ractive.min"
@@ -31,7 +31,8 @@ define(['jquery',
 					per_page     : _config['per_page']
 				},
 				beforeSend:function(){
-					$('#container').html('<center><img src="imgs/loading.gif" class="loading"></center>');
+					// $('#container').html('<center><img src="imgs/loading.gif" class="loading"></center>');
+					$('#container').html('<center><i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i></center>');
 				},
 				success:function(data, textStatus, jqXHR){
 					var link = jqXHR.getResponseHeader("Link") || "";
@@ -89,7 +90,7 @@ define(['jquery',
 		function detail(id){
 			if(!window._G){
 				window._G = {post: {}, postList: {}};
-				window._G.post[id] = {};  
+				window._G.post[id] = {};
 			}
 
 		if(_G.post[id].body != undefined){
@@ -105,7 +106,7 @@ define(['jquery',
 			// access_token:_config['access_token']
 		},
 		beforeSend:function(){
-			$('#container').html('<center><img src="imgs/loading.gif" alt="loading" class="loading"></center>');
+			$('#container').html('<center><i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i></center>');
 		},
 		success:function(data){
 			var ractive = new Ractive({
@@ -118,7 +119,7 @@ define(['jquery',
 		toggleDuoshuoComments('#container', id);
 		highlight();
 		}
-		});  
+		});
 
 		}
 
@@ -137,4 +138,5 @@ define(['jquery',
 	};
 	var router = Router(routes);
 	router.init('/');
+    console.log("%c"+"hello!!", "color:#ff3355");
 });

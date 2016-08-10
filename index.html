@@ -4,44 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>wayyolo的博客</title>
-    <link rel='stylesheet' href='css/GitHub2.css' type='text/css'/>
-    <link rel='stylesheet' href='css/style.css' type='text/css'/>
-   <!--  <link rel='stylesheet' href='css/blur.css' type='text/css'/> -->
-    <link rel="stylesheet" href="css/highlight.css">
-<!--     // <script src="js/jquery-2.0.3.min.js"></script>
-    // <script src="js/director.min.js"></script>   
-    // <script src="js/ractive.min.js"></script>    
-    // <script src="js/marked.min.js"></script>
-    // <script src="config.js"></script>
-    // <script src="js/highlight.min.js"></script> 
-    // <script src="http://static.duoshuo.com/embed.js"></script> -->
-    <!--
-    <script src="http://apps.bdimg.com/libs/highlight.js/8.6/highlight.min.js"></script>
-    -->
-
+    <link rel='stylesheet' href='dist/css/app.css' type='text/css'/>
 </head>
 <body>
-<div id="header"><h1><a href="#/" class="blog_title">wayyolo的博客</a></h1>
-</div>
-<div id="container">
-    <center><img src="imgs/loading.gif" alt="loading" class="loading"></center>
-</div>
-<script type="text/ractive" id="listTpl">
-    <ul class="postlist">
-        {{#posts}}
-        <li class="postlist"><a href="#post/{{number}}">{{title}}</a><span class="datetime">{{formatTime(created_at)}}</span></li>
-        {{/posts}}
-    </ul>
-    {{#prev}}<a href="#p{{page-1}}" class="prev">上一页</a>{{/prev}}
-    {{#next}}<a href="#p{{page+1}}" class="next">下一页</a>{{/next}}
-</script>
-<script type="text/ractive" id="detailTpl">
-    {{#post}}
-     <h1>{{title}}</h1>
-     <span class="create_at">发表于 {{formatTime(created_at)}}</span>
-     <div class="content">{{{markdown2HTML(body)}}}</div>
-    {{/post}}
-</script>
-<script data-main="main" src="js/require.min.js"></script>
+    <div class="webpage-wrapper">
+        <div class="sidebar-col">
+            <div class="sidebar-heading"></div>
+            <div class="sidebar-body">
+                <a href="#" class="sidebar-profilepic">
+                    <img src="imgs/avatar.png">
+                </a>
+                <a href="#" class="author_name">Way</a>
+                <span class="author_job">FRONT-END DEVELOPER</span>
+                <span class="author_bio">一生想做优雅前端.</span>
+                <div class="sidebar-social">
+                    <ul class="social-links">
+                        <li>
+                            <a href="mailto:wang.yu1@zte.com.cn">
+                                <i class="fa fa-fw fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/WayYOLO">
+                                <i class="fa fa-fw fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://weibo.com/2387606247">
+                                <i class="fa fa-fw fa-weibo"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.zhihu.com/people/wang-yu-88-20">
+                                知
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-col">
+            <div class="container"id="container">
+                <center><i class="fa fa-spinner fa-spin fa-3x fa-fw "></i></center>
+            </div>
+        </div>
+    </div><!-- ./webpage-wrapper -->
+    <script type="text/ractive" id="listTpl">
+        <ul class="postlist">
+            {{#posts}}
+            <li class="postlist"><a href="#post/{{number}}">{{title}}</a><span class="datetime">{{formatTime(created_at)}}</span></li>
+            {{/posts}}
+        </ul>
+        {{#prev}}<a href="#p{{page-1}}" class="prev"><i class="fa fa-fw fa-chevron-circle-left"></i>上一页</a>{{/prev}}
+        {{#next}}<a href="#p{{page+1}}" class="next"><i class="fa fa-fw fa-chevron-circle-right"></i>下一页</a>{{/next}}
+    </script>
+    <script type="text/ractive" id="detailTpl">
+        {{#post}}
+         <h1>{{title}}</h1>
+         <span class="create_at">发表于 {{formatTime(created_at)}}</span>
+         <div class="content">{{{markdown2HTML(body)}}}</div>
+        {{/post}}
+    </script>
+    <script data-main="main" src="lib/require.min.js"></script>
 </body>
 </html>

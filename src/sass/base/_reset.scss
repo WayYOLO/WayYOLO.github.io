@@ -1,0 +1,127 @@
+@charset "UTF-8";
+// ===========================================================================
+//  重置样式
+// ===========================================================================
+//标准初始化，如项目中引入了normalize,则无需引入，也可将变量reset-import设为false;
+@if($reset-import){
+// 1. 去除（几乎所有）标签的内外边距和边框
+// 2. 修正字体的显示属性
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;  // 1
+	padding: 0;  // 1
+	border: 0;  // 1
+	font-size: 100%;
+	font-weight: inherit;  // 2
+	font-style: inherit;  // 2
+	vertical-align: baseline;
+}
+// 为低版本浏览器声明HTML5新标签的显示类型
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+}
+//===========================================================================
+//自定义初始化,不要与标准同时引入;
+@else if($normal-reset ){
+
+audio,
+canvas,
+img,
+video {
+	display: block;
+}
+//设置行高,使得调整元素的方式变得更加容易
+html {
+	line-height: 1;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a:focus {
+	outline: 0;
+}
+p,
+small {
+	margin: 0;
+	padding: 0;
+}
+// ol,
+// ul,
+// menu {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// }
+blockquote,
+q {
+	margin: 0;
+}
+cite {
+	font-style: inherit;
+}
+form {
+	margin: 0;
+}
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+pre {
+	margin: 0;
+}
+ //  移除默认边框
+img,iframe{
+	border:0;
+}
+// 去除引用部分外部的引号
+blockquote, q {
+	quotes: none;
+	&:before, &:after {
+		content: "";
+		content: none;
+	}
+}
+}

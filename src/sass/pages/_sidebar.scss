@@ -1,0 +1,95 @@
+@charset "UTF-8";
+// ===========================================================================
+//  侧边栏
+//
+// ===========================================================================
+
+.sidebar-col{
+    background: rgba(255,255,255,1);
+    width: 19rem;//304px
+    position: fixed;
+    opacity: 1;
+    transition: all 0.2s ease-in;
+    height: 100%;
+    overflow-y: auto;
+    .sidebar-heading{
+        width: 100%;
+        height: 11rem;//176px
+        background-color: rgba(118, 190, 204,.7);
+        position: absolute;
+    }
+    .sidebar-body{
+        width: 100%;
+        text-align: center;
+        margin:7rem auto 0;//112px
+    }
+    .sidebar-profilepic{
+        display: block;
+        border: .35rem solid #fff;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        background: #88acdb;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        text-align: center;
+        img{
+            width: 100%;
+        }
+    }
+    .author_name{
+        display: block;
+        color: #F36170;
+        font-size: 150%;//24px
+        text-align: center;
+    }
+    .author_job{
+        display: block;
+        color: #8d7edc;
+        font-size: 87.5%;
+    }
+    .author_bio{
+        display: block;
+        color: #555555;
+        font-size:100%;
+    }
+    .sidebar-social{
+        margin-top: 3rem;
+    }
+    ul.social-links{
+        margin: 0;
+        padding: 0;
+        list-style:none;
+        > li{
+            display: inline-block;
+            margin-left: 1.25rem;//20
+            font-size: 128%;
+            &:first-child{
+                margin-left: 0;
+            }
+            a{
+                color: #222;
+                transition: color 0.1s ease;
+                &:hover,&:active,&:focus{
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:62rem){
+    .sidebar-col{
+        width: 100%;
+        height: 24rem;
+        .sidebar-social{
+            margin-top: 1rem;
+        }
+    }
+
+}
