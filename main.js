@@ -138,4 +138,5 @@ define(['jquery',
 	};
 	var router = Router(routes);
 	router.init('/');
+    console.log("%c"+"hello!!", "color:#ff3355");
 });

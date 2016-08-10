@@ -1,0 +1,131 @@
+@charset "UTF-8";
+// ===========================================================================
+//  主内容
+//
+// ===========================================================================
+.content-col{
+    margin-left: 19rem;
+    padding:1rem;
+}
+.container{
+    margin:0 auto;
+    padding:1rem;
+    border:1px solid #d8d8d8;
+    border-radius:.4rem;
+    box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
+    background-color: #fff;
+    max-width:75rem;//1200px
+    width: 100%;
+    position:relative;
+    overflow: hidden;
+}
+ul.postlist{
+    list-style:none;
+    margin-bottom: 0;
+    padding-right:1rem;
+    padding-left:1rem;
+    >li{
+        // height: 2.5rem;
+        padding:.5rem 0 .5rem 0;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow: hidden;
+        @include clearfix;
+        &::before{
+            content: "\f097";
+            font: normal normal normal 14px/1 FontAwesome;
+            display: inline-block;
+            text-rendering: auto;
+            margin-right: .8rem;
+            font-size: 150%;
+            color:#3BB9C9;
+        }
+        &:nth-child(odd)::before{
+            color:#EA7B12;
+        }
+        a {
+            display:inline-block;
+            color: #444;
+            font-size:100%;
+            vertical-align: top;//使对齐我也不知道原理
+            &:hover,&:active,&:focus{
+                color: #33DAE3;
+            }
+        }
+        > .datetime{
+            float: right;
+            color: #3E6166;
+            font-size:100%;
+            vertical-align:top;
+            &::before{
+            content: "\f073";
+            font: normal normal normal 14px/1 FontAwesome;
+            display: inline-block;
+            text-rendering: auto;
+            margin-right: .6rem;
+            font-size: 120%;
+            color: #3BB9C9;
+        }
+        }
+    }
+}
+.create_at{
+        display: block;
+        color: #3E6166;
+        font-size:100%;
+        vertical-align:top;
+        padding-bottom: 0.8rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px dashed #d8d8d8;
+        &::before{
+        content: "\f017";
+        font: normal normal normal 14px/1 FontAwesome;
+        display: inline-block;
+        text-rendering: auto;
+        margin-right: .6rem;
+        font-size: 150%;
+        color: #3BB9C9;
+    }
+}
+a.prev ,a.next{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding:.3rem .8rem;
+    border: 1px solid rgba(0,0,0,.1);
+    background: #0B0A0A linear-gradient(hsla(0,0%,100%,.2) , transparent);
+    //推荐使用HSLA而不是RGBA来产生半透明的白色，因为它的字符更短；
+    border-radius:.2rem;
+    box-shadow:0 .05rem .25rem rgba(0,0,0,.5);
+    color:  white;
+    text-shadow: 0 -.05rem .05rem rgba(0,0,0,.5);
+    font-size:90%;
+    line-height:1.2;
+    transition: background-color .25s;
+    @include button-common-att();
+    &:hover,&:active,&:focus{
+        background-color:darken(#0B0A0A, 3%);
+    }
+}
+a.prev{
+    margin-left: 1rem;
+}
+a.next{
+    float: right;
+    margin-right: 1rem;
+}
+@media(max-width:62rem){
+    .content-col{
+        margin-left: 0;
+        margin-top: 24rem;
+        padding-right:.2rem;
+        padding-left:.2rem;
+    }
+    ul.postlist >li{
+        a{
+            width: 100%;
+        }
+        > .datetime{
+            float: left;
+        }
+    }
+}

@@ -5,45 +5,50 @@
 // ===========================================================================
 //盒子模型
 html {
-	box-sizing: $box-sizing-value;
-	//表单元素在手机中点击时会出现边框，取消边框
-	-webkit-tap-highlight-color:rgba(0,0,0,0)
+    box-sizing: $box-sizing-value;
+    //表单元素在手机中点击时会出现边框，取消边框
+    -webkit-tap-highlight-color:rgba(0,0,0,0)
 }
 *{
-	&,
-	& :before,
-	& :after {
-		box-sizing: inherit;
-	}
+    &,
+    & :before,
+    & :after {
+        box-sizing: inherit;
+    }
 }
 //导入字体文件
 @font-face {
 font-family: 'My Helvetica Neue';
-	src: url('../fonts/HelveticaNeue.eot');
-	src: url('../fonts/HelveticaNeue.eot') format('embedded-opentype'),
-		url('../fonts/HelveticaNeue.woff2') format('woff2'),
-		url('../fonts/HelveticaNeue.woff') format('woff'),
-		url('../fonts/HelveticaNeue.ttf') format('truetype'),
-		url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+    src: url('../fonts/HelveticaNeue.eot');
+    src: url('../fonts/HelveticaNeue.eot') format('embedded-opentype'),
+        url('../fonts/HelveticaNeue.woff2') format('woff2'),
+        url('../fonts/HelveticaNeue.woff') format('woff'),
+        url('../fonts/HelveticaNeue.ttf') format('truetype'),
+        url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
 }
-//body初始化设置
+//html,body初始化设置
 @if($ratio-font-size){
-	html{
-		font-size: 62.5%;//10px = 1em = 100% = 8pt 由于chrome设置了最小字体大小为12px，此合理性不强
-	}
+    html{
+        font-size: 62.5%;//10px = 1em = 100% = 8pt 由于chrome设置了最小字体大小为12px，此合理性不强
+    }
 }@else{
-	html{
-		font-size: $rem-font-size;//默认根字体大小;
-	}
+    html{
+        font-size: $rem-font-size;//默认根字体大小;
+    }
 }
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family:$normal-font;
+    font-family:$source-sans-pro;
     font-size: $font-size-base;
     line-height: $line-height-base;
     color: $text-color;
     background-color: $body-bg;
+}
+//让html和body撑满窗口，以便子标签继承；
+html,body{
+    width:100%;
+    height: 100%;
 }
 //===========================================================================
 //项目基础设置(可持续增加)
@@ -66,69 +71,39 @@ a:active {
 }
 //修复表单元素不能继承字体样式
 input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	font-weight: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
 }
 // 1. 禁止按钮中的文字被选中
 // 2. 清除按钮和输入框获取焦点时和点击后的外圈线
 //    如此会导致在页面中使用tab键时没有明确的提示效果
 input, button, textarea, keygen, select {
-	-webkit-user-select: none;  // 1
-	-moz-user-select: none;  // 1
-	-ms-user-select: none;  // 1
-	user-select: none;  // 1
-	&:focus, &:active {
-		outline: none;  // 2
-	}
+    -webkit-user-select: none;  // 1
+    -moz-user-select: none;  // 1
+    -ms-user-select: none;  // 1
+    user-select: none;  // 1
+    &:focus, &:active {
+        outline: none;  // 2
+    }
 }
 // 1. 去除列表样式符
 // 2. 清除列表左缩进
 // 3. 清除列表上下间距
 ul, ol, dd {
-	list-style-type: none;  // 1
-	padding-left: 0;  // 2
-	margin-top: 0;  // 3
-	margin-bottom: 0;  // 3
+    list-style-type: none;  // 1
+    padding-left: 0;  // 2
+    margin-top: 0;  // 3
+    margin-bottom: 0;  // 3
 }
 // 合并表格的边框
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 //textarea不可伸缩
 textarea{
     resize:none;
 }
-// 常用html标签样式初始化
-//==============================================
-h1, h2, h3, h4, h5, h6{
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
-}
-h1, h2, h3{
-  margin-top: $line-height-computed;
-  margin-bottom: ($line-height-computed / 2);
- }
-h4,h5,h6{
-  margin-top: ($line-height-computed / 2);
-  margin-bottom: ($line-height-computed / 2);
-}
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-h3 { font-size: $font-size-h3; }
-h4 { font-size: $font-size-h4; }
-h5 { font-size: $font-size-h5; }
-h6 { font-size: $font-size-h6; }
-p {
-  margin: 0 0 ($line-height-computed / 2);
-}
-hr{
-	margin-top:$line-height-computed;
-	margin-bottom:$line-height-computed;
-	height: .05rem;
-	background-color:currentColor;
-}
+

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/*  样式是由 Sass 编译生成的，不要直接修改 .css 文件  */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -3461,14 +3462,6 @@ small {
   padding: 0;
 }
 
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 blockquote,
 q {
   margin: 0;
@@ -3525,11 +3518,16 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "My Helvetica Neue", "Microsoft YaHei", Helvetica;
-  font-size: 14px;
-  line-height: 1.42857;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #222;
   background-color: #fff;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -3575,118 +3573,84 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
 
-h1, h2, h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h4, h5, h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 h1 {
-  font-size: 36px;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.75rem;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.5rem;
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 1.25rem;
 }
 
 h6 {
-  font-size: 12px;
+  font-size: 1rem;
 }
 
-p {
-  margin: 0 0 10px;
-}
-
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: .05rem;
-  background-color: currentColor;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
-}
-
-h1, h2, h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h4, h5, h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-h5 {
-  font-size: 14px;
-}
-
-h6 {
-  font-size: 12px;
-}
-
-p {
-  margin: 0 0 10px;
+p,
+pre,
+ol,
+ul,
+dl {
+  margin-bottom: 1rem;
 }
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   height: .05rem;
   background-color: currentColor;
 }
 
 blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  border-left: 5px solid #ddd;
+  padding: 0.5rem 1rem;
+  margin: 0 0 1rem;
+  border-left: 0.25rem solid #ddd;
 }
 blockquote p:last-child,
 blockquote ul:last-child,
 blockquote ol:last-child {
   margin-bottom: 0;
+}
+
+.webpage-wrapper {
+  width: 100%;
+  min-height: 100%;
+  position: static;
+  overflow: hidden;
+  background-color: #fafafa;
+  *zoom: 1;
+}
+.webpage-wrapper:before, .webpage-wrapper:after {
+  content: "";
+  display: table;
+}
+.webpage-wrapper:after {
+  clear: both;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 75rem;
+  width: 100%;
+  position: relative;
 }
 
 button {
@@ -3777,6 +3741,256 @@ button.disabled, button.disabled:hover, button.disabled:focus, button.disabled.f
   border-bottom: 0;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+}
+
+.sidebar-col {
+  background: white;
+  width: 19rem;
+  position: fixed;
+  opacity: 1;
+  transition: all 0.2s ease-in;
+  height: 100%;
+  overflow-y: auto;
+}
+.sidebar-col .sidebar-heading {
+  width: 100%;
+  height: 11rem;
+  background-color: rgba(118, 190, 204, 0.7);
+  position: absolute;
+}
+.sidebar-col .sidebar-body {
+  width: 100%;
+  text-align: center;
+  margin: 7rem auto 0;
+}
+.sidebar-col .sidebar-profilepic {
+  display: block;
+  border: .35rem solid #fff;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #88acdb;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  text-align: center;
+}
+.sidebar-col .sidebar-profilepic img {
+  width: 100%;
+}
+.sidebar-col .author_name {
+  display: block;
+  color: #F36170;
+  font-size: 150%;
+  text-align: center;
+}
+.sidebar-col .author_job {
+  display: block;
+  color: #8d7edc;
+  font-size: 87.5%;
+}
+.sidebar-col .author_bio {
+  display: block;
+  color: #555555;
+  font-size: 100%;
+}
+.sidebar-col .sidebar-social {
+  margin-top: 3rem;
+}
+.sidebar-col ul.social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-col ul.social-links > li {
+  display: inline-block;
+  margin-left: 1.25rem;
+  font-size: 128%;
+}
+.sidebar-col ul.social-links > li:first-child {
+  margin-left: 0;
+}
+.sidebar-col ul.social-links > li a {
+  color: #222;
+  transition: color 0.1s ease;
+}
+.sidebar-col ul.social-links > li a:hover, .sidebar-col ul.social-links > li a:active, .sidebar-col ul.social-links > li a:focus {
+  color: #999;
+}
+
+@media (max-width: 62rem) {
+  .sidebar-col {
+    width: 100%;
+    height: 24rem;
+  }
+  .sidebar-col .sidebar-social {
+    margin-top: 1rem;
+  }
+}
+.content-col {
+  margin-left: 19rem;
+  padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #d8d8d8;
+  border-radius: .4rem;
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.07);
+  background-color: #fff;
+  max-width: 75rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+ul.postlist {
+  list-style: none;
+  margin-bottom: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+ul.postlist > li {
+  padding: .5rem 0 .5rem 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  *zoom: 1;
+}
+ul.postlist > li:before, ul.postlist > li:after {
+  content: "";
+  display: table;
+}
+ul.postlist > li:after {
+  clear: both;
+}
+ul.postlist > li::before {
+  content: "\f097";
+  font: normal normal normal 14px/1 FontAwesome;
+  display: inline-block;
+  text-rendering: auto;
+  margin-right: .8rem;
+  font-size: 150%;
+  color: #3BB9C9;
+}
+ul.postlist > li:nth-child(odd)::before {
+  color: #EA7B12;
+}
+ul.postlist > li a {
+  display: inline-block;
+  color: #444;
+  font-size: 100%;
+  vertical-align: top;
+}
+ul.postlist > li a:hover, ul.postlist > li a:active, ul.postlist > li a:focus {
+  color: #33DAE3;
+}
+ul.postlist > li > .datetime {
+  float: right;
+  color: #3E6166;
+  font-size: 100%;
+  vertical-align: top;
+}
+ul.postlist > li > .datetime::before {
+  content: "\f073";
+  font: normal normal normal 14px/1 FontAwesome;
+  display: inline-block;
+  text-rendering: auto;
+  margin-right: .6rem;
+  font-size: 120%;
+  color: #3BB9C9;
+}
+
+.create_at {
+  display: block;
+  color: #3E6166;
+  font-size: 100%;
+  vertical-align: top;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed #d8d8d8;
+}
+.create_at::before {
+  content: "\f017";
+  font: normal normal normal 14px/1 FontAwesome;
+  display: inline-block;
+  text-rendering: auto;
+  margin-right: .6rem;
+  font-size: 150%;
+  color: #3BB9C9;
+}
+
+a.prev, a.next {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: .3rem .8rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #0B0A0A linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+  border-radius: .2rem;
+  box-shadow: 0 0.05rem 0.25rem rgba(0, 0, 0, 0.5);
+  color: white;
+  text-shadow: 0 -0.05rem 0.05rem rgba(0, 0, 0, 0.5);
+  font-size: 90%;
+  line-height: 1.2;
+  transition: background-color .25s;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  white-space: nowrap;
+}
+a.prev:hover, a.prev:active, a.prev:focus, a.next:hover, a.next:active, a.next:focus {
+  background-color: #030303;
+}
+
+a.prev {
+  margin-left: 1rem;
+}
+
+a.next {
+  float: right;
+  margin-right: 1rem;
+}
+
+@media (max-width: 62rem) {
+  .content-col {
+    margin-left: 0;
+    margin-top: 24rem;
+    padding-right: .2rem;
+    padding-left: .2rem;
+  }
+
+  ul.postlist > li a {
+    width: 100%;
+  }
+  ul.postlist > li > .datetime {
+    float: left;
+  }
+}
+.content a {
+  color: #4183C4;
+  text-decoration: none;
+}
+.content a:hover, .content a:active, .content a:focus {
+  color: #3a7bbb;
+}
+.content ul {
+  padding-left: 2rem;
+  list-style-type: circle;
+}
+.content ol {
+  padding-left: 2rem;
+  list-style-type: lower-roman;
+}
+
+p.ds-powered-by {
+  visibility: hidden;
 }
 
 

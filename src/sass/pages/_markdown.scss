@@ -1,0 +1,20 @@
+.content{
+    a{
+        color: #4183C4;
+        text-decoration:none;
+        &:hover,&:active,&:focus{
+            color: darken(#4183C4, 3%);
+        }
+    }
+    ul{
+        padding-left:2rem;
+        list-style-type:circle;
+    }
+    ol{
+        padding-left:2rem;
+        list-style-type:lower-roman;
+    }
+}
+p.ds-powered-by{
+    visibility:hidden;
+}
