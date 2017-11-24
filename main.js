@@ -137,6 +137,10 @@ define(['jquery',
 		'post/:postId': detail
 	};
 	var router = Router(routes);
-	router.init('/');
+    router.init('/');
+    $("[data-track]").on("click", function () {
+        var label = $(this).data("track");
+        window._hmt && window._hmt.push(['_trackEvent', label, 'click']);
+    });
     console.log("%c"+"hello!!", "color:#ff3355");
 });
