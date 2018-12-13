@@ -6,6 +6,7 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
+    "serve": "serve ./dist",
     "precommit": "npm run lint"
   },
   "repository": {
@@ -14,14 +15,15 @@
   },
   "keywords": [
     "blog",
-    "uim",
+    "umi",
     "react"
   ],
   "author": "way",
   "license": "ISC",
-  "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "umi": "^2.0.0-beta.18",
-    "umi-plugin-react": "^1.0.0-beta.18"
+  "dependencies": {},
+  "devDependencies": {
+    "dva-logger": "^1.0.0",
+    "umi": "^2.2.8",
+    "umi-plugin-react": "^1.2.3"
   }
 }

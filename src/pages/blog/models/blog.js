@@ -1,7 +1,6 @@
 import * as blogService from '../services/blog';
 
 export default {
-  namespace: 'blog',
   state: {
     list: [],
     blogLists:[],
@@ -20,7 +19,6 @@ export default {
     },
     *getBlogLists({payload},{call,put}){
       const data = yield call(blogService.getBlogLists,payload);
-      console.log('blogLists:',data.data);
       if(data){
         yield put({
           type:'save',
