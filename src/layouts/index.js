@@ -1,21 +1,24 @@
-import { Layout, Menu , Breadcrumb} from 'antd';
-import style from './index.less';
+import React from 'react';
+import { Layout, Menu, Breadcrumb } from 'antd';
 import Link from 'umi/link';
+import style from './index.less';
+
 const { Header, Footer, Content } = Layout;
 
 const App = props => {
+  const { children } = props;
   const HeaderMenuList = [
-    {key:'1',title:'首页',to:'/'},
-    {key:'2',title:'博客',to:'/blog'},
-    {key:'3',title:'其他',to:'/other'}
-  ]
-  const renderMenu  = () => {
-    let defaultSelectedKeysArr = []
+    { key: '1', title: '首页', to: '/' },
+    { key: '2', title: '博客', to: '/blog' },
+    { key: '3', title: '其他', to: '/other' },
+  ];
+  const renderMenu = () => {
+    const defaultSelectedKeysArr = [];
     HeaderMenuList.forEach(element => {
-      if(element.to === props.location.pathname.includes){
-        defaultSelectedKeysArr.push(element.key)
-      }else if(props.location.pathname.includes(element.to)&&element.to !=='/'){
-        defaultSelectedKeysArr.push(element.key)
+      if (element.to === props.location.pathname.includes) {
+        defaultSelectedKeysArr.push(element.key);
+      } else if (props.location.pathname.includes(element.to) && element.to !== '/') {
+        defaultSelectedKeysArr.push(element.key);
       }
     });
     return (
@@ -25,14 +28,16 @@ const App = props => {
         defaultSelectedKeys={defaultSelectedKeysArr}
         style={{ lineHeight: '64px' }}
       >
-      {HeaderMenuList.map(element => (
-        <Menu.Item key={element.key}><Link to={element.to}>{element.title}</Link></Menu.Item>
-      ))}
+        {HeaderMenuList.map(element => (
+          <Menu.Item key={element.key}>
+            <Link to={element.to}>{element.title}</Link>
+          </Menu.Item>
+        ))}
       </Menu>
-    )
-  }
+    );
+  };
   return (
-    <Layout >
+    <Layout>
       <Header>
         <div className={style.logo} />
         {renderMenu()}
@@ -41,12 +46,10 @@ const App = props => {
         <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>首页</Breadcrumb.Item>
         </Breadcrumb>
-        <div style={{ background: '#fff', padding: 24, minHeight: 800 }}>
-          {props.children}
-        </div>
+        <div style={{ background: '#fff', padding: '24px', minHeight: '800px' }}>{children}</div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        way's blog ©2018 Created by wayyolo
+        way&#180;s blog &copy; 2018 Created by wayyolo
       </Footer>
     </Layout>
   );

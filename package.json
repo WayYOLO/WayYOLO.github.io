@@ -7,7 +7,7 @@
     "start": "umi dev",
     "build": "umi build",
     "serve": "serve ./dist",
-    "precommit": "npm run lint"
+    "precommit": "./node_modules/.bin/eslint --fix  --ext .js src "
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,25 @@
   ],
   "author": "way",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "antd": "^3.11.2",
+    "dva": "^2.4.1",
     "dva-logger": "^1.0.0",
+    "prop-types": "^15.6.2",
+    "qs": "^6.6.0",
+    "react": "^16.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-compat": "^2.6.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.3",
     "umi": "^2.2.8",
     "umi-plugin-react": "^1.2.3"
   }

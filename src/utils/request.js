@@ -29,13 +29,13 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default async function request(options) {
-  const url = options.url;
+  const { url } = options;
   const option = {
     method: options.method,
     mode: 'cors',
     body: JSON.stringify(options.params),
-    headers: options.headers || {}
-  }
+    headers: options.headers || {},
+  };
 
   const response = await fetch(url, option);
 

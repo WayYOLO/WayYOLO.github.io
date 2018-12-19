@@ -1,5 +1,7 @@
-//配置Dva
-export const dva = {
+import { createLogger } from 'dva-logger';
+
+// 配置Dva
+const dva = {
   config: {
     onError(e) {
       e.preventDefault();
@@ -8,9 +10,8 @@ export const dva = {
   },
   ...(process.env.NODE_ENV !== 'production'
     ? {
-        plugins: [
-          require('dva-logger')()
-        ],
+        plugins: [createLogger()],
       }
     : {}),
 };
+export default dva;
