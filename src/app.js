@@ -1,4 +1,4 @@
-import { createLogger } from 'dva-logger';
+import logger  from 'dva-logger';
 
 // 配置Dva
 const dva = {
@@ -10,7 +10,7 @@ const dva = {
   },
   ...(process.env.NODE_ENV !== 'production'
     ? {
-        plugins: [createLogger()],
+        plugins: [logger()],
       }
     : {}),
 };
